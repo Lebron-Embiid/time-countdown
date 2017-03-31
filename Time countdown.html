@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p id="p"></p>
+	<img src="" alt="">
+	<img src="" alt="">
+	<img src="" alt="">
+	<img src="" alt="">
+	<img src="" alt="">
+	<img src="" alt="">
+	<img src="" alt="">
+	<img src="" alt="">
+	<img src="" alt="">
+	<img src="" alt="">
+	<img src="" alt="">
+	<img src="" alt="">
+	<img src="" alt="">
+	<img src="" alt="">
+</body>
+<script>
+	function timeover(){
+		var date = new Date();
+		var New = new Date(2017,3,1,0,0);  		//获取倒计时的未来时间
+		var day = Math.floor((New-date)/1000);	//获取倒计时的秒数
+		// var time = "距离明天还剩 "+Math.floor(day/86400)+"天"+Math.floor(day%86400/3600)+"小时"+Math.floor(day%86400%3600/60)+"分钟"+Math.floor(day%60)+"秒";
+		var time = Math.floor(day/86400)+"."+Math.floor(day%86400/3600)+"."+Math.floor(day%86400%3600/60)+"."+Math.floor(day%60);
+		//图片时间
+		var img = document.images;
+		for(var i=0;i<time.length;i++){
+			img[i].src = time[i]+".jpg";
+		}
+		var p = document.getElementById("p");
+		p.innerHTML = time;
+	}
+	setInterval(timeover,1000);
+	timeover();
+</script>
+</html>
